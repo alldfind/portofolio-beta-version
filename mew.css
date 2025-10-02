@@ -303,7 +303,7 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  background: black rgba(0, 0, 0, 0, 8);
+  background: black rgba(0, 0, 0, 0.8);
   justify-content: center;
   align-items: center;
   z-index: 300;
@@ -517,6 +517,7 @@ body {
       transform: translate(20%) scale(1);
       opacity: 1;
     } */
+
 
 
 
