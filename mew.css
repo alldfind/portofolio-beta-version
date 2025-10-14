@@ -736,9 +736,20 @@ body {
 
 
 
+ 
+.content h1,
+.content2 h1, .content3 h1{
+  font-size:1.7rem;
+}
+
+#about p, .content2 p {
+  font-size:0.8rem;
+}
 
   
-
+.content4 h1 {
+  font-size: 1rem;
+}
 .icon2{
    display: flex;
      flex-wrap:wrap;
@@ -767,7 +778,7 @@ body {
 }
 
 .contact, .contact span{
-  font-size: 30px;
+  font-size: 20px;
   color:aliceblue;
 }
 
