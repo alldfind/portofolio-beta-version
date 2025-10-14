@@ -22,6 +22,28 @@ for (let i = 0; i < jumlahCircle; i++) {
   bg.appendChild(circle);
 }
 
+// animasi background2
+
+document.querySelectorAll(".bg2").forEach((bg) => {
+  const jumlahPartikel = 30;
+  for (let i = 0; i < jumlahPartikel; i++) {
+    const partikel = document.createElement("div");
+    partikel.classList.add("bg-partikel");
+
+    const ukuran = Math.random() * 6 + 3;
+    partikel.style.width = ukuran + "px";
+    partikel.style.height = ukuran + "px";
+
+    partikel.style.left = Math.random() * 100 + "%";
+    partikel.style.top = Math.random() * 100 + "%";
+
+    const durasi = Math.random() * 12 + 6;
+    partikel.style.animationDuration = durasi + "s";
+
+    bg.appendChild(partikel);
+  }
+});
+
 // link
 
 document.querySelectorAll(".github").forEach((el) => {
@@ -52,21 +74,27 @@ document.querySelectorAll(".email").forEach((el) => {
 const bgimg = document.getElementById("bgimg");
 const close = document.querySelector(".close");
 const fullimg = document.getElementById("fullimg");
+const nav = document.getElementById("navbar");
 
 document.querySelectorAll(".clickimg").forEach((img) => {
   img.addEventListener("click", () => {
     bgimg.style.display = "flex";
     fullimg.src = img.src;
+
+    nav.style.animation = "none";
+    nav.style.transform = "translateY(-100%)";
   });
 });
 
 close.addEventListener("click", () => {
   bgimg.style.display = "none";
+  nav.style.transform = "translateY(0)";
 });
 
 bgimg.addEventListener("click", (e) => {
   if (e.target !== fullimg) {
     bgimg.style.display = "none";
+    nav.style.transform = "translateY(0)";
   }
 });
 
@@ -86,17 +114,19 @@ const observer = new IntersectionObserver(
 
 showIn.forEach((el) => observer.observe(el));
 
-// const newShow = document.querySelectorAll(".in2")
+// fix bug sticky gajelas
 
-// const content = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         entry.target.classList.add(".show2");
-//         content.unobserve(entry.target);
-//       }
-//     });
-//   }, {threshold: 0.5}
-// );
+const navbar = document.getElementById("navbar");
+const nextSection = navbar.nextElementSibling;
+const navTop = navbar.offsetTop;
+const navHeight = navbar.offsetHeight;
 
-// newShow.forEach((el) => content.observer(el));
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= navTop) {
+    navbar.classList.add("fixed");
+    nextSection.style.marginTop = navHeight + "px";
+  } else {
+    navbar.classList.remove("fixed");
+    nextSection.style.marginTop = "0";
+  }
+});
