@@ -368,7 +368,7 @@ body {
 
 .full {
   width: 90%;
-  height: auto;
+  height: 90%;
   border-radius: 16px;
   z-index: 9999;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -629,6 +629,15 @@ body {
   .git i {
     font-size: 28px;
   }
+  .full{
+      width:90%;
+  height: auto;
+  border-radius: 16px;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease-in-out;
+  cursor:pointer;
+  }
 }
 
 
@@ -693,9 +702,10 @@ body {
          height:3px;
           background:#00aaff;
       }
+    
 
   .full{
-      width: 90%;
+      width:90%;
   height: auto;
   border-radius: 16px;
   z-index: 9999;
