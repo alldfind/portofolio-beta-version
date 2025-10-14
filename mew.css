@@ -570,6 +570,34 @@ body {
   scroll-margin-top:-70px; 
 }
 
+ .bg2 {
+  position: absolute;
+  inset: 0;            
+  z-index: -1;
+  pointer-events: none;
+   overflow: hidden;
+}
+
+.bg-partikel {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #00aaff;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: move 15s linear infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0) translateX(0);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(-120vh) translateX(40vw);
+    opacity: 0;
+  }}
+
 
 
 @media (max-width: 1024px) {
@@ -715,37 +743,6 @@ body {
   }
 
 
-     .bg2 {
-  position: absolute;
-  inset: 0;            
-  z-index: -1;
-  pointer-events: none;
-   overflow: hidden;
-}
-
-.bg-partikel {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #00aaff;
-  border-radius: 50%;
-  opacity: 0.7;
-  animation: move 15s linear infinite;
-}
-
-@keyframes move {
-  from {
-    transform: translateY(0) translateX(0);
-    opacity: 0.7;
-  }
-  to {
-    transform: translateY(-120vh) translateX(40vw);
-    opacity: 0;
-  }}
-
-
-
- 
 .content h1,
 .content2 h1, .content3 h1{
   font-size:1.7rem;
