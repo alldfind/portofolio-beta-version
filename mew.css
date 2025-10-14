@@ -368,7 +368,7 @@ body {
 
 .full {
   width: 90%;
-  height: 90%;
+  height: auto;
   border-radius: 16px;
   z-index: 9999;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
